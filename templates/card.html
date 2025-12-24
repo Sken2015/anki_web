@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Anki Web</title>
+</head>
+<body>
+
+<h1>暗記カード</h1>
+
+<div style="border:1px solid #333; padding:20px; font-size:24px;">
+  {{ card.front }}
+</div>
+
+{% if show_back %}
+  <hr>
+  <div style="color:blue; font-size:20px;">
+    {{ card.back }}
+  </div>
+
+  <br>
+  <a href="/">次のカード</a>
+
+{% else %}
+  <br><br>
+  <a href="/show?id={{ card_id }}">答えを見る</a>
+{% endif %}
+
+</body>
+</html>
