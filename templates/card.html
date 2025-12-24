@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anki Web</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 40vh;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    button {
+      flex: 1;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background: #007aff;
+      color: white;
+    }
+
+    button:active {
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
 
-<h1>暗記カード</h1>
+  <div class="container">
+    <div class="card" id="card">
+      {{ card.front | safe }}
+    </div>
 
-<div style="border:1px solid #333; padding:20px; font-size:24px;">
-  {{ card.front }}
-</div>
-
-{% if show_back %}
-  <hr>
-  <div style="color:blue; font-size:20px;">
-    {{ card.back }}
+    <div class="buttons">
+      <button onclick="toggle()">表 / 裏</button>
+      <button onclick="reload()">次へ</button>
+    </div>
   </div>
 
-  <br>
-  <a href="/">次のカード</a>
+  <script>
+  let showingFront = true;
 
-{% else %}
-  <br><br>
-  <a href="/show?id={{ card_id }}">答えを見る</a>
-{% endif %}
+  const front = `{{ card.front | safe }}`;
+  const back  = `{{ card.back  | safe }}`;
+
+  function toggle() {
+    document.getElementById("card").innerHTML =
+      showingFront ? back : front;
+    showingFront = !showingFront;
+  }
+
+  function reload() {
+    location.reload();
+  }
+</script>
 
 </body>
 </html>
