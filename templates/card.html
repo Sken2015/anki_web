@@ -63,22 +63,30 @@
     </div>
   </div>
 
-  <script>
-  let showingFront = true;
+    <script>
+    let showingBoth = false;
 
-  const front = `{{ card.front | safe }}`;
-  const back  = `{{ card.back  | safe }}`;
+    const front = `{{ card.front | safe }}`;
+    const back  = `{{ card.back  | safe }}`;
 
-  function toggle() {
-    document.getElementById("card").innerHTML =
-      showingFront ? back : front;
-    showingFront = !showingFront;
-  }
+    function toggle() {
+        const card = document.getElementById("card");
 
-  function reload() {
-    location.reload();
-  }
-</script>
+        if (showingBoth) {
+        // 表だけ
+        card.innerHTML = front;
+        } else {
+        // 表 + 裏
+        card.innerHTML = front + "<hr>" + back;
+        }
+
+        showingBoth = !showingBoth;
+    }
+
+    function reload() {
+        location.reload();
+    }
+    </script>
 
 </body>
 </html>
