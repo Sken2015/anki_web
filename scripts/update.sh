@@ -2,11 +2,12 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$SCRIPT_DIR"
+REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$REPO_DIR"
 
 # データの吸い出し
 cp ~/Library/Application\ Support/Anki2/ユーザー\ 1/collection.anki2 data/collection.anki2
-python3 export.py
+python3 scripts/export.py
 
 # コミット＆プッシュ
 git add .

@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 # パス設定
-BASE_DIR = Path(__file__).parent
+BASE_DIR = Path(__file__).parent.parent
 DB_PATH = BASE_DIR / "data/collection.anki2"
 OUT_PATH = BASE_DIR / "data/cards.json"
 
