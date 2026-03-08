@@ -3,8 +3,9 @@ import json
 from pathlib import Path
 
 # パス設定
-DB_PATH = Path("data/collection.anki2")
-OUT_PATH = Path("data/cards.json")
+BASE_DIR = Path(__file__).parent
+DB_PATH = BASE_DIR / "data/collection.anki2"
+OUT_PATH = BASE_DIR / "data/cards.json"
 
 def main():
     conn = sqlite3.connect(DB_PATH)
