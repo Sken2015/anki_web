@@ -1,3 +1,38 @@
 2026-03-08 14:52:10,400 INFO スケジューラ起動（毎日 06:00 に実行）
 2026-03-08 14:56:59,835 INFO スケジューラ起動（毎日 06:00 に実行）
 2026-03-09 06:03:22,163 INFO === 定時実行開始 ===
+2026-03-09 06:03:24,007 INFO 成功:
+Exported 1173 cards → /Users/sugi/Desktop/claude/anki_web/data/cards.json
+[main e9579f1] fix: update card logic
+ 4 files changed, 317 insertions(+), 7 deletions(-)
+2026-03-10 06:00:13,565 INFO === 定時実行開始 ===
+2026-03-10 06:00:13,666 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude/anki_web/scripts/update.sh: No such file or directory
+2026-03-10 06:00:13,667 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-03-11 06:29:17,236 INFO === 定時実行開始 ===
+2026-03-11 06:29:17,329 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude/anki_web/scripts/update.sh: No such file or directory
+2026-03-11 06:29:17,329 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-03-12 06:00:14,682 INFO === 定時実行開始 ===
+2026-03-12 06:00:14,772 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude/anki_web/scripts/update.sh: No such file or directory
+2026-03-12 06:00:14,772 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-03-13 06:08:45,289 INFO === 定時実行開始 ===
+2026-03-13 06:08:45,384 WARNING 試行 1/5 失敗:
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+bash: /Users/sugi/Desktop/claude/anki_web/scripts/update.sh: No such file or directory
+2026-03-13 06:08:45,384 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-03-14 06:00:27,806 INFO === 定時実行開始 ===
+2026-03-14 06:00:27,879 WARNING 試行 1/5 失敗:
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+bash: /Users/sugi/Desktop/claude/anki_web/scripts/update.sh: No such file or directory
+2026-03-14 06:00:27,880 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-03-15 06:00:04,769 INFO === 定時実行開始 ===
+2026-03-15 06:00:04,828 WARNING 試行 1/5 失敗:
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+bash: /Users/sugi/Desktop/claude/anki_web/scripts/update.sh: No such file or directory
+2026-03-15 06:00:04,829 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-04-12 12:15:50,718 INFO スケジューラ起動（毎日 06:00 に実行）
+2026-04-12 12:15:50,718 INFO スケジューラ起動（毎日 06:00 に実行）
+2026-04-13 06:14:22,850 INFO === 定時実行開始 ===
+2026-04-13 06:14:22,850 INFO === 定時実行開始 ===

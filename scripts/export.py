@@ -1,5 +1,6 @@
 import sqlite3
 import json
+import random
 from pathlib import Path
 
 # パス設定
@@ -38,6 +39,9 @@ def main():
         cards.append(card)
 
     conn.close()
+
+    if len(cards) > 100:
+        cards = random.sample(cards, 100)
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(cards, f, ensure_ascii=False, indent=2)
