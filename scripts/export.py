@@ -40,8 +40,8 @@ def main():
 
     conn.close()
 
-    if len(cards) > 100:
-        cards = random.sample(cards, 100)
+    if len(cards) > 200:
+        cards = random.sample(cards, 200)
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(cards, f, ensure_ascii=False, indent=2)
