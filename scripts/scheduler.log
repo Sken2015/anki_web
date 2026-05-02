@@ -226,3 +226,13 @@ Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.
  3 files changed, 810 insertions(+), 800 deletions(-)
 2026-05-02 06:06:41,716 INFO === 定時実行開始 ===
 2026-05-02 06:06:41,716 INFO === 定時実行開始 ===
+2026-05-02 06:06:44,415 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main e0d3342] fix: update card logic
+ 3 files changed, 809 insertions(+), 799 deletions(-)
+2026-05-02 06:06:44,415 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main e0d3342] fix: update card logic
+ 3 files changed, 809 insertions(+), 799 deletions(-)
+2026-05-03 06:16:31,368 INFO === 定時実行開始 ===
+2026-05-03 06:16:31,368 INFO === 定時実行開始 ===
