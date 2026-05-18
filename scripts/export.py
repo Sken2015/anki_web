@@ -4,16 +4,23 @@ import random
 from pathlib import Path
 
 # パス設定
-BASE_DIR = Path(__file__).parent.parent
-DB_PATH = BASE_DIR / "data/collection.anki2"
-OUT_PATH = BASE_DIR / "data/cards.json"
+ANKI_DB_PATH = Path.home() / "Library/Application Support/Anki2/ユーザー 1/collection.anki2"
+OUT_PATH = Path(__file__).parent.parent / "data/cards.json"
 
 def main():
-    conn = sqlite3.connect(DB_PATH)
+    # Ankiが開いていても backup API でWAL込みの一貫したスナップショットをメモリ上に取得
+    src = sqlite3.connect(str(ANKI_DB_PATH))
+    src.create_collation("unicase", lambda a, b: (a.lower() > b.lower()) - (a.lower() < b.lower()))
+
+    conn = sqlite3.connect(":memory:")
+    conn.create_collation("unicase", lambda a, b: (a.lower() > b.lower()) - (a.lower() < b.lower()))
+    src.backup(conn)
+    src.close()
+
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
 
-    sql = """
+    sql_random = """
     SELECT
         cards.id AS card_id,
         notes.id AS note_id,
@@ -21,11 +28,28 @@ def main():
         notes.tags
     FROM cards
     JOIN notes ON cards.nid = notes.id
+    ORDER BY RANDOM()
+    LIMIT 200
     """
 
+    sql_fallback = """
+    SELECT
+        cards.id AS card_id,
+        notes.id AS note_id,
+        notes.flds,
+        notes.tags
+    FROM cards
+    JOIN notes ON cards.nid = notes.id
+    LIMIT 2000
+    """
+
+    try:
+        rows = cur.execute(sql_random).fetchall()
+    except sqlite3.DatabaseError:
+        rows = cur.execute(sql_fallback).fetchall()
     cards = []
 
-    for row in cur.execute(sql):
+    for row in rows:
         fields = row["flds"].split("\x1f")
 
         card = {
