@@ -438,3 +438,13 @@ sqlite3.DatabaseError: database disk image is malformed
 2026-05-18 22:59:36,094 INFO スケジューラ起動（毎日 06:00 に実行）
 2026-05-19 06:01:39,114 INFO === 定時実行開始 ===
 2026-05-19 06:01:39,114 INFO === 定時実行開始 ===
+2026-05-19 06:01:50,064 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 860d521] fix: update card logic
+ 5 files changed, 942 insertions(+), 807 deletions(-)
+2026-05-19 06:01:50,064 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 860d521] fix: update card logic
+ 5 files changed, 942 insertions(+), 807 deletions(-)
+2026-05-20 06:07:02,506 INFO === 定時実行開始 ===
+2026-05-20 06:07:02,506 INFO === 定時実行開始 ===
