@@ -478,3 +478,65 @@ Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.
  2 files changed, 810 insertions(+), 800 deletions(-)
 2026-05-23 06:00:28,200 INFO === 定時実行開始 ===
 2026-05-23 06:00:28,200 INFO === 定時実行開始 ===
+2026-05-23 06:00:36,970 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 5637b98] fix: update card logic
+ 2 files changed, 808 insertions(+), 798 deletions(-)
+2026-05-23 06:00:36,970 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 5637b98] fix: update card logic
+ 2 files changed, 808 insertions(+), 798 deletions(-)
+2026-05-24 06:00:03,194 INFO === 定時実行開始 ===
+2026-05-24 06:00:03,194 INFO === 定時実行開始 ===
+2026-05-24 06:00:03,263 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-24 06:00:03,263 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-24 06:00:03,265 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-24 06:00:03,265 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-25 06:00:07,013 INFO === 定時実行開始 ===
+2026-05-25 06:00:07,013 INFO === 定時実行開始 ===
+2026-05-25 06:00:07,093 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-25 06:00:07,093 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-25 06:00:07,093 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-25 06:00:07,093 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-26 06:08:52,319 INFO === 定時実行開始 ===
+2026-05-26 06:08:52,319 INFO === 定時実行開始 ===
+2026-05-26 06:08:52,390 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-26 06:08:52,390 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-26 06:08:52,390 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-26 06:08:52,390 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-27 06:03:40,861 INFO === 定時実行開始 ===
+2026-05-27 06:03:40,861 INFO === 定時実行開始 ===
+2026-05-27 06:03:40,943 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-27 06:03:40,943 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-27 06:03:40,944 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-27 06:03:40,944 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-28 06:09:12,843 INFO === 定時実行開始 ===
+2026-05-28 06:09:12,843 INFO === 定時実行開始 ===
+2026-05-28 06:09:12,884 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-28 06:09:12,884 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-28 06:09:12,884 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-28 06:09:12,884 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-28 11:35:46,751 INFO スケジューラ起動（毎日 06:00 に実行）
+2026-05-28 11:35:46,751 INFO スケジューラ起動（毎日 06:00 に実行）
+2026-05-28 11:36:10,281 INFO スケジューラ起動（毎日 06:00 に実行）
+2026-05-28 11:36:10,281 INFO スケジューラ起動（毎日 06:00 に実行）
+2026-05-29 06:00:04,791 INFO === 定時実行開始 ===
+2026-05-29 06:00:04,791 INFO === 定時実行開始 ===
+2026-05-29 06:00:04,834 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-29 06:00:04,834 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-29 06:00:04,834 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-29 06:00:04,834 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-29 06:00:20,195 INFO === 定時実行開始 ===
+2026-05-29 06:00:20,195 INFO === 定時実行開始 ===
