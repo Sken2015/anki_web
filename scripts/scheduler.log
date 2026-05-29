@@ -540,3 +540,13 @@ bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation
 2026-05-29 06:00:04,834 ERROR ネットワーク以外のエラーのためリトライ中止
 2026-05-29 06:00:20,195 INFO === 定時実行開始 ===
 2026-05-29 06:00:20,195 INFO === 定時実行開始 ===
+2026-05-29 06:00:30,210 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 9a8a431] fix: update card logic
+ 2 files changed, 861 insertions(+), 799 deletions(-)
+2026-05-29 06:00:30,210 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 9a8a431] fix: update card logic
+ 2 files changed, 861 insertions(+), 799 deletions(-)
+2026-05-30 06:00:15,255 INFO === 定時実行開始 ===
+2026-05-30 06:00:15,255 INFO === 定時実行開始 ===
