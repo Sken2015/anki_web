@@ -550,3 +550,29 @@ Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.
  2 files changed, 861 insertions(+), 799 deletions(-)
 2026-05-30 06:00:15,255 INFO === 定時実行開始 ===
 2026-05-30 06:00:15,255 INFO === 定時実行開始 ===
+2026-05-30 06:00:19,595 INFO === 定時実行開始 ===
+2026-05-30 06:00:19,595 INFO === 定時実行開始 ===
+2026-05-30 06:00:19,647 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-30 06:00:19,647 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-30 06:00:19,647 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-30 06:00:19,647 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-30 06:00:23,707 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 3a60749] fix: update card logic
+ 2 files changed, 810 insertions(+), 800 deletions(-)
+2026-05-30 06:00:23,707 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main 3a60749] fix: update card logic
+ 2 files changed, 810 insertions(+), 800 deletions(-)
+2026-05-31 06:00:04,879 INFO === 定時実行開始 ===
+2026-05-31 06:00:04,879 INFO === 定時実行開始 ===
+2026-05-31 06:00:04,968 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-31 06:00:04,968 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-05-31 06:00:04,969 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-31 06:00:04,969 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-05-31 06:00:08,845 INFO === 定時実行開始 ===
+2026-05-31 06:00:08,845 INFO === 定時実行開始 ===
