@@ -658,3 +658,21 @@ Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.
  2 files changed, 818 insertions(+), 800 deletions(-)
 2026-06-06 06:30:22,747 INFO === 定時実行開始 ===
 2026-06-06 06:30:22,747 INFO === 定時実行開始 ===
+2026-06-06 06:30:30,894 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main a8d3310] fix: update card logic
+ 2 files changed, 806 insertions(+), 796 deletions(-)
+2026-06-06 06:30:30,894 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main a8d3310] fix: update card logic
+ 2 files changed, 806 insertions(+), 796 deletions(-)
+2026-06-06 06:30:34,875 INFO === 定時実行開始 ===
+2026-06-06 06:30:34,875 INFO === 定時実行開始 ===
+2026-06-06 06:30:34,903 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-06-06 06:30:34,903 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-06-06 06:30:34,903 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-06-06 06:30:34,903 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-06-07 06:00:35,453 INFO === 定時実行開始 ===
+2026-06-07 06:00:35,453 INFO === 定時実行開始 ===
