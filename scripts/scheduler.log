@@ -720,3 +720,21 @@ bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation
 2026-06-09 06:00:08,153 ERROR ネットワーク以外のエラーのためリトライ中止
 2026-06-09 06:00:19,288 INFO === 定時実行開始 ===
 2026-06-09 06:00:19,288 INFO === 定時実行開始 ===
+2026-06-09 06:00:40,630 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main b6c5510] fix: update card logic
+ 2 files changed, 818 insertions(+), 800 deletions(-)
+2026-06-09 06:00:40,630 INFO 成功:
+Exported 200 cards → /Users/sugi/Desktop/claude_workspace/anki_web/data/cards.json
+[main b6c5510] fix: update card logic
+ 2 files changed, 818 insertions(+), 800 deletions(-)
+2026-06-10 06:03:58,013 INFO === 定時実行開始 ===
+2026-06-10 06:03:58,013 INFO === 定時実行開始 ===
+2026-06-10 06:03:58,090 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-06-10 06:03:58,090 WARNING 試行 1/5 失敗:
+bash: /Users/sugi/Desktop/claude_workspace/anki_web/scripts/update.sh: Operation not permitted
+2026-06-10 06:03:58,090 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-06-10 06:03:58,090 ERROR ネットワーク以外のエラーのためリトライ中止
+2026-06-10 06:04:00,242 INFO === 定時実行開始 ===
+2026-06-10 06:04:00,242 INFO === 定時実行開始 ===
