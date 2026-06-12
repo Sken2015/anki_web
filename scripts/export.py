@@ -7,6 +7,15 @@ from pathlib import Path
 ANKI_DB_PATH = Path.home() / "Library/Application Support/Anki2/ユーザー 1/collection.anki2"
 OUT_PATH = Path(__file__).parent.parent / "data/cards.json"
 
+
+def load_deck_map(cur):
+    row = cur.execute("SELECT decks FROM col LIMIT 1").fetchone()
+    if not row:
+        return {}
+    decks_json = json.loads(row[0])
+    return {int(did): info["name"].split("::")[-1] for did, info in decks_json.items()}
+
+
 def main():
     # Ankiが開いていても backup API でWAL込みの一貫したスナップショットをメモリ上に取得
     src = sqlite3.connect(str(ANKI_DB_PATH))
@@ -20,9 +29,12 @@ def main():
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
 
+    deck_map = load_deck_map(cur)
+
     sql_random = """
     SELECT
         cards.id AS card_id,
+        cards.did AS deck_id,
         notes.id AS note_id,
         notes.flds,
         notes.tags
@@ -35,6 +47,7 @@ def main():
     sql_fallback = """
     SELECT
         cards.id AS card_id,
+        cards.did AS deck_id,
         notes.id AS note_id,
         notes.flds,
         notes.tags
@@ -55,6 +68,7 @@ def main():
         card = {
             "card_id": row["card_id"],
             "note_id": row["note_id"],
+            "deck": deck_map.get(row["deck_id"], ""),
             "front": fields[0] if len(fields) > 0 else "",
             "back": fields[1] if len(fields) > 1 else "",
             "tags": row["tags"].split() if row["tags"] else []

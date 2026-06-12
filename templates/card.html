@@ -18,6 +18,17 @@
       padding: 16px;
     }
 
+    .subject-badge {
+      display: inline-block;
+      background: #007aff;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
     .card {
       background: white;
       border-radius: 12px;
@@ -53,6 +64,9 @@
 <body>
 
   <div class="container">
+    {% if card.deck %}
+    <div class="subject-badge">{{ card.deck }}</div>
+    {% endif %}
     <div class="card" id="card">
       {{ card.front | safe }}
     </div>
