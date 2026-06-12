@@ -9,11 +9,8 @@ OUT_PATH = Path(__file__).parent.parent / "data/cards.json"
 
 
 def load_deck_map(cur):
-    row = cur.execute("SELECT decks FROM col LIMIT 1").fetchone()
-    if not row:
-        return {}
-    decks_json = json.loads(row[0])
-    return {int(did): info["name"].split("::")[-1] for did, info in decks_json.items()}
+    rows = cur.execute("SELECT id, name FROM decks").fetchall()
+    return {row[0]: row[1].split("::")[-1] for row in rows}
 
 
 def main():
