@@ -28,7 +28,7 @@ def main():
 
     deck_map = load_deck_map(cur)
 
-    sql_random = """
+    sql_all = """
     SELECT
         cards.id AS card_id,
         cards.did AS deck_id,
@@ -37,32 +37,14 @@ def main():
         notes.tags
     FROM cards
     JOIN notes ON cards.nid = notes.id
-    ORDER BY RANDOM()
-    LIMIT 200
     """
 
-    sql_fallback = """
-    SELECT
-        cards.id AS card_id,
-        cards.did AS deck_id,
-        notes.id AS note_id,
-        notes.flds,
-        notes.tags
-    FROM cards
-    JOIN notes ON cards.nid = notes.id
-    LIMIT 2000
-    """
+    rows = cur.execute(sql_all).fetchall()
+    conn.close()
 
-    try:
-        rows = cur.execute(sql_random).fetchall()
-    except sqlite3.DatabaseError:
-        rows = cur.execute(sql_fallback).fetchall()
-    cards = []
-
-    for row in rows:
+    def to_card(row):
         fields = row["flds"].split("\x1f")
-
-        card = {
+        return {
             "card_id": row["card_id"],
             "note_id": row["note_id"],
             "deck": deck_map.get(row["deck_id"], ""),
@@ -71,17 +53,24 @@ def main():
             "tags": row["tags"].split() if row["tags"] else []
         }
 
-        cards.append(card)
+    all_cards = [to_card(r) for r in rows]
 
-    conn.close()
+    # 短答 = デッキ名に「短答」を含む / 論証 = それ以外（論証・要件事実 等）
+    tanto = [c for c in all_cards if "短答" in c["deck"]]
+    ronsho = [c for c in all_cards if "短答" not in c["deck"]]
 
-    if len(cards) > 200:
-        cards = random.sample(cards, 200)
+    TANTO_N = 100
+    RONSHO_N = 50
+    n_tanto = min(TANTO_N, len(tanto))
+    n_ronsho = min(RONSHO_N, len(ronsho))
+
+    cards = random.sample(tanto, n_tanto) + random.sample(ronsho, n_ronsho)
+    random.shuffle(cards)
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(cards, f, ensure_ascii=False, indent=2)
 
-    print(f"Exported {len(cards)} cards → {OUT_PATH}")
+    print(f"Exported {len(cards)} cards (短答{n_tanto} + 論証{n_ronsho}) → {OUT_PATH}")
 
 if __name__ == "__main__":
     main()

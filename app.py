@@ -24,7 +24,8 @@ def select_cards(cards, mode):
     if mode == "tanto":
         return [c for c in cards if "短答" in c.get("deck", "")]
     if mode == "ronsho":
-        return [c for c in cards if "論証" in c.get("deck", "")]
+        # 論証扱い = 短答以外（論証・民事要件事実 等を含む）
+        return [c for c in cards if "短答" not in c.get("deck", "")]
     return cards
 
 
