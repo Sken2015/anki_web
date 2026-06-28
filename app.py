@@ -1,10 +1,16 @@
 import json
 import os
-import random
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 DATA_PATH = "data/cards.json"
+
+# 出題モード（全部 / 短答のみ / 論証のみ）
+MODES = {
+    "all":    {"label": "全部", "path": "/"},
+    "tanto":  {"label": "短答", "path": "/tanto"},
+    "ronsho": {"label": "論証", "path": "/ronsho"},
+}
 
 
 def load_cards():
@@ -14,31 +20,45 @@ def load_cards():
         return json.load(f)
 
 
-@app.route("/")
-def index():
-    cards = load_cards()
+def select_cards(cards, mode):
+    if mode == "tanto":
+        return [c for c in cards if "短答" in c.get("deck", "")]
+    if mode == "ronsho":
+        return [c for c in cards if "論証" in c.get("deck", "")]
+    return cards
+
+
+def render_mode(mode):
+    cards = select_cards(load_cards(), mode)
     if not cards:
         return "カードがまだありません"
 
-    card_id = random.randrange(len(cards))
+    # ランダム200枚（cards.json の並び順）を i 番目から順番に出題する
+    i = request.args.get("i", default=0, type=int) % len(cards)
     return render_template(
         "card.html",
-        card=cards[card_id],
-        show_back=False,
-        card_id=card_id
+        card=cards[i],
+        index=i,
+        total=len(cards),
+        mode=mode,
+        modes=MODES,
+        base=MODES[mode]["path"],
     )
 
 
-@app.route("/show")
-def show():
-    cards = load_cards()
-    card_id = int(request.args.get("id"))
-    return render_template(
-        "card.html",
-        card=cards[card_id],
-        show_back=True,
-        card_id=card_id
-    )
+@app.route("/")
+def index():
+    return render_mode("all")
+
+
+@app.route("/tanto")
+def tanto():
+    return render_mode("tanto")
+
+
+@app.route("/ronsho")
+def ronsho():
+    return render_mode("ronsho")
 
 
 if __name__ == "__main__":

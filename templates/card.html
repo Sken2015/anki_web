@@ -18,6 +18,37 @@
       padding: 16px;
     }
 
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .mode {
+      flex: 1;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 14px;
+      text-decoration: none;
+      color: #007aff;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .mode.active {
+      background: #007aff;
+      color: #fff;
+    }
+
+    .pos {
+      font-size: 13px;
+      color: #888;
+      white-space: nowrap;
+      padding-left: 4px;
+    }
+
     .card {
       background: white;
       border-radius: 12px;
@@ -57,6 +88,11 @@
       color: white;
     }
 
+    button.secondary {
+      background: #e5e5ea;
+      color: #333;
+    }
+
     button:active {
       opacity: 0.7;
     }
@@ -65,6 +101,13 @@
 <body>
 
   <div class="container">
+    <div class="topbar">
+      {% for key, m in modes.items() %}
+      <a class="mode {{ 'active' if key == mode else '' }}" href="{{ m.path }}">{{ m.label }}</a>
+      {% endfor %}
+      <span class="pos">{{ index + 1 }} / {{ total }}</span>
+    </div>
+
     <div class="card">
       {% if card.deck %}
       <div class="subject-label">{{ card.deck }}</div>
@@ -74,7 +117,8 @@
 
     <div class="buttons">
       <button onclick="toggle()">表 / 裏</button>
-      <button onclick="reload()">次へ</button>
+      <button class="secondary" onclick="go(-1)">前へ</button>
+      <button onclick="go(1)">次へ</button>
     </div>
   </div>
 
@@ -83,6 +127,8 @@
 
     const front = `{{ card.front | safe }}`;
     const back  = `{{ card.back  | safe }}`;
+    const base  = "{{ base }}";
+    const index = {{ index }};
 
     function toggle() {
         const content = document.getElementById("card-content");
@@ -94,8 +140,8 @@
         showingBoth = !showingBoth;
     }
 
-    function reload() {
-        location.reload();
+    function go(step) {
+        location.href = base + "?i=" + (index + step);
     }
     </script>
 
