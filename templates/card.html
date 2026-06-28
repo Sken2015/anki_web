@@ -88,9 +88,13 @@
       color: white;
     }
 
-    button.secondary {
-      background: #e5e5ea;
-      color: #333;
+    button.ghost {
+      flex: 0 0 auto;
+      background: transparent;
+      color: #c4c4c9;
+      font-size: 13px;
+      padding: 14px 10px;
+      box-shadow: none;
     }
 
     button:active {
@@ -116,8 +120,8 @@
     </div>
 
     <div class="buttons">
+      <button class="ghost" onclick="go(-1)">前へ</button>
       <button onclick="toggle()">表 / 裏</button>
-      <button class="secondary" onclick="go(-1)">前へ</button>
       <button onclick="go(1)">次へ</button>
     </div>
   </div>
