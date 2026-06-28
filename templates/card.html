@@ -137,7 +137,22 @@
     const front = `{{ card.front | safe }}`;
     const back  = `{{ card.back  | safe }}`;
     const base  = "{{ base }}";
+    const mode  = "{{ mode }}";
     const index = {{ index }};
+
+    // 続きから再開: 位置を localStorage に保存し、?i= 無しで開いたら保存位置へ復帰
+    const posKey = "anki_pos_" + mode;
+    (function restore() {
+        const hasI = new URLSearchParams(location.search).has("i");
+        if (!hasI) {
+            const saved = localStorage.getItem(posKey);
+            if (saved !== null && saved !== String(index)) {
+                location.replace(base + "?i=" + saved);
+                return;
+            }
+        }
+        localStorage.setItem(posKey, index);
+    })();
 
     function toggle() {
         const content = document.getElementById("card-content");
