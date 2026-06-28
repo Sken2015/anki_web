@@ -88,17 +88,20 @@
       color: white;
     }
 
-    button.ghost {
-      flex: 0 0 auto;
-      background: transparent;
-      color: #c4c4c9;
-      font-size: 13px;
-      padding: 14px 10px;
-      box-shadow: none;
-    }
-
     button:active {
       opacity: 0.7;
+    }
+
+    .backlink-row {
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    .backlink {
+      font-size: 13px;
+      color: #c4c4c9;
+      text-decoration: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -120,9 +123,11 @@
     </div>
 
     <div class="buttons">
-      <button class="ghost" onclick="go(-1)">前へ</button>
       <button onclick="toggle()">表 / 裏</button>
       <button onclick="go(1)">次へ</button>
+    </div>
+    <div class="backlink-row">
+      <a class="backlink" onclick="go(-1)">← 前へ</a>
     </div>
   </div>
 
