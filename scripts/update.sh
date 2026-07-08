@@ -10,7 +10,7 @@ ts() { date '+%Y-%m-%d %H:%M:%S'; }
 # --- 二重起動・ロック残留の防止（macOSにflockが無いのでmkdir方式） ---
 # mkdir はアトミック。既にロックがあっても、中のPIDが死んでいれば
 # 残留とみなして掃除する（ハングした前回実行が永久に後続を弾くのを防ぐ）
-LOCK_DIR="$SCRIPT_DIR/.update.lock"
+LOCK_DIR="/tmp/anki_web.update.lock"
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
     oldpid="$(cat "$LOCK_DIR/pid" 2>/dev/null || true)"
     if [ -n "$oldpid" ] && kill -0 "$oldpid" 2>/dev/null; then
@@ -46,6 +46,7 @@ git push &
 push_pid=$!
 ( sleep 120; kill "$push_pid" 2>/dev/null ) &
 watcher_pid=$!
+disown "$watcher_pid" 2>/dev/null || true   # kill時の "Terminated" ノイズを抑制
 
 if wait "$push_pid"; then
     kill "$watcher_pid" 2>/dev/null || true
